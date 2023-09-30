@@ -1,0 +1,41 @@
+#include <fstream>
+using namespace std;
+ifstream fin("nrlipsa.in");
+ofstream fout("nrlipsa.out");
+int long long fr[100001], k=0, a=-1, b=-1;
+int main()
+{
+    int n, k=0;
+    fin>>n;
+    int t;
+    while(fin>>t){
+        if(t<1000){
+        fr[t]++;
+        }
+    }
+    
+    for(int i=999;i>=100;i--){
+        if(fr[i]==0 && k<2){
+        if(k==0){
+            a=i;
+        }
+        if(k==1){
+         b=i;   
+        }
+        k++;
+    }
+    }
+    if(k==2){
+        fout<<a<<" "<<b;
+    }
+    
+         if(k==0){
+            fout<<"NU";
+        }
+         else if(k < 2)
+        fout << "NU";
+    
+    
+
+    return 0;
+}
